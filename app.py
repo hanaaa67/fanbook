@@ -9,12 +9,12 @@ dotenv_path = join(dirname(__file__), '.env')
 load_dotenv (dotenv_path)
 
 MONGODB_URL = os.environ.get("mongodb+srv://aghnq:Faqih2006@cluster0.sepvmlq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-DB_NAME =os.environ.get("dbsparta")
+DB_NAME =os.environ.get("cluster0")
 
-dbsparta = "dbsparta"
+dbsparta = "cluster0"
 
 client = MongoClient('mongodb+srv://aghnq:Faqih2006@cluster0.sepvmlq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
-db = client.dbsparta
+db = client.cluster0
 
 app = Flask(__name__)
 @app.route('/')
