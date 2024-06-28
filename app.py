@@ -8,13 +8,11 @@ from pymongo import MongoClient
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv (dotenv_path)
 
-MONGODB_URL = os.environ.get("mongodb+srv://aghnq:Faqih2006@cluster0.sepvmlq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-DB_NAME =os.environ.get("cluster0")
+MONGODB_URI = os.environ.get("MONGODB_URI")
+DB_NAME =os.environ.get("DB_NAME")
 
-dbsparta = "cluster0"
-
-client = MongoClient('mongodb+srv://aghnq:Faqih2006@cluster0.sepvmlq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
-db = client.cluster0
+client = MongoClient(MONGODB_URI)
+db = client[DB_NAME]
 
 app = Flask(__name__)
 @app.route('/')
